@@ -1,0 +1,98 @@
+/* Base styles and utilities */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.hero-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+/* Floating label forms */
+.floating-label {
+    position: relative;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label,
+.floating-label select:focus + label,
+.floating-label select:not([value=""]) + label {
+    transform: translateY(-25px) scale(0.85);
+    color: #3b82f6;
+}
+
+.floating-label label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    color: #6b7280;
+    background: white;
+    padding: 0 4px;
+}
+
+/* Map styles */
+#map, #runnerMap {
+    height: 400px;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.leaflet-container {
+    border-radius: 0.75rem;
+}
+
+/* Language selector */
+.language-selector {
+    position: relative;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    min-width: 150px;
+    display: none;
+    overflow: hidden;
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.language-option:hover {
+    background-color: #f3f4f6;
+}
+
+.language-option.active {
+    background-color: #eff6ff;
+    font-weight: 600;
+    color: #3b82f6;
+}

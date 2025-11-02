@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Helper Service Finder</title>
+        
+        <!-- External Dependencies -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        
+        <!-- Our CSS Files -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/animations.css">
+    </head>
+    <body class="bg-gray-50">
+        <!-- Navigation Bar -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-3">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-2 rounded-lg">
+                            <i class="fas fa-hands-helping text-white text-xl"></i>
+                        </div>
+                        <h1 class="text-xl font-bold text-gray-800" data-i18n="appTitle">Helper Service Finder</h1>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-1" id="desktopNav">
+                        <!-- Navigation items will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="flex items-center space-x-3">
+                        <!-- Language Selector -->
+                        <div class="language-selector">
+                            <button id="languageToggle" class="flex items-center space-x-1 text-gray-600 hover:text-blue-500 transition px-3 py-2 rounded-lg hover:bg-blue-50">
+                                <i class="fas fa-globe"></i>
+                                <span id="currentLanguage">English</span>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </button>
+                            <div id="languageDropdown" class="language-dropdown">
+                                <!-- Language options will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Menu Button -->
+                        <button id="mobileMenuToggle" class="md:hidden text-gray-600 hover:text-blue-500 transition">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Navigation Menu -->
+                <div id="mobileNav" class="md:hidden mt-4 hidden">
+                    <!-- Mobile nav items will be populated by JavaScript -->
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Container -->
+        <div id="pageContainer">
+            <!-- Pages will be loaded here dynamically -->
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="fixed inset-0 bg-white bg-opacity-80 flex items-center justify-center z-50 hidden">
+            <div class="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-500"></div>
+        </div>
+
+        <!-- Our JavaScript Files -->
+        <script src="js/backend.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/i18n.js"></script>
+        <script src="js/forms.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/chat.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
